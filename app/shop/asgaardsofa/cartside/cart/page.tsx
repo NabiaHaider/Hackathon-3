@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Cart = () => {
   return (
@@ -25,7 +26,10 @@ const Cart = () => {
           />
           <h1 className="text-7xl mb-7 font-medium">Cart</h1>
           <p className="text-2xl mt-1 font-medium">
-            <a href="/">Home</a> &gt; <span className="text-gray-600">Cart</span>
+            <Link href="/">
+              <a>Home</a>
+            </Link> 
+            &gt; <span className="text-gray-600">Cart</span>
           </p>
         </div>
       </section>
@@ -41,7 +45,6 @@ const Cart = () => {
               <h1>Quantity</h1>
               <h1>Subtotal</h1>
             </div>
-            {/* Example Product Rows */}
             {/* Example Product Rows */}
             <div className="grid grid-cols-4 gap-4 text-center border-b py-4">
               <div className="flex flex-col items-center">
@@ -65,19 +68,23 @@ const Cart = () => {
           </div>
 
           {/* Cart Total Section */}
-          <div className=" bg-orange-100 p-6 rounded-lg shadow-lg">
+          <div className="bg-orange-100 p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-center">Cart Totals</h2>
             <div className="flex justify-between border-b pb-2 mb-2 font-semibold">
-              <span className='ml-5 text-lg'>Subtotal</span>
-              <span className='text-gray-400 mr-5'>Rs. 250,000.00</span>
+              <span className="ml-5 text-lg">Subtotal</span>
+              <span className="text-gray-400 mr-5">Rs. 250,000.00</span>
             </div>
             <div className="flex justify-between font-semibold text-lg">
-              <span className='ml-5'>Total</span>
-              <span className='text-yellow-600 text-lg mr-5'>Rs. 250,000.00</span>
+              <span className="ml-5">Total</span>
+              <span className="text-yellow-600 text-lg mr-5">Rs. 250,000.00</span>
             </div>
-          <a href='/shop/asgaardsofa/cartside/checkout'> <button className="mt-8 w-56 ml-14  border border-black text-black py-4 rounded-lg hover:bg-gray-400">
-              Checkout
-            </button></a> 
+            <Link href="/shop/asgaardsofa/cartside/checkout">
+              <a>
+                <button className="mt-8 w-56 ml-14 border border-black text-black py-4 rounded-lg hover:bg-gray-400">
+                  Checkout
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -89,7 +96,7 @@ const Cart = () => {
             <div className="flex flex-col items-center text-center">
               <h2 className="text-black font-bold text-3xl">Free Delivery</h2>
               <p className="text-xl text-gray-500 flex-grow mt-2">
-                For all orders over $50, consectetur <span className='pr-72'>adipim scing elit.</span>
+                For all orders over $50, consectetur <span className="pr-72">adipiscing elit.</span>
               </p>
             </div>
 
@@ -97,7 +104,7 @@ const Cart = () => {
             <div className="flex flex-col items-center text-center">
               <h2 className="text-black font-bold text-3xl">90 Days Return</h2>
               <p className="text-xl text-gray-500 flex-grow mt-2">
-                If the product has an issue, consectetur <span className='pr-48'>adipim scing elit.</span>
+                If the product has an issue, consectetur <span className="pr-48">adipiscing elit.</span>
               </p>
             </div>
 
@@ -105,7 +112,7 @@ const Cart = () => {
             <div className="flex flex-col items-center text-center">
               <h2 className="text-black font-bold text-3xl">Secure Payments</h2>
               <p className="text-xl text-gray-500 flex-grow mt-2">
-                100% secure payments, consectetur <span className='pr-72'>adipim scing elit.</span>
+                100% secure payments, consectetur <span className="pr-72">adipiscing elit.</span>
               </p>
             </div>
           </div>
@@ -118,7 +125,7 @@ const Cart = () => {
             {/* Address */}
             <div className="text-gray-600 text-sm">
               <p>Jouhar</p>
-              <p className='my-4'>pakistan</p>
+              <p className="my-4">Pakistan</p>
             </div>
 
             {/* Links */}
@@ -126,16 +133,24 @@ const Cart = () => {
               <h3 className="text-gray-400 text-sm font-medium mb-3">Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-black hover:text-gray-700 transition">Home</a>
+                  <Link href="/">
+                    <a className="text-black hover:text-gray-700 transition">Home</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/shop" className="text-black hover:text-gray-700 transition">Shop</a>
+                  <Link href="/shop">
+                    <a className="text-black hover:text-gray-700 transition">Shop</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/blog" className="text-black hover:text-gray-700 transition">Blog</a>
+                  <Link href="/blog">
+                    <a className="text-black hover:text-gray-700 transition">Blog</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contact" className="text-black hover:text-gray-700 transition">Contact</a>
+                  <Link href="/contact">
+                    <a className="text-black hover:text-gray-700 transition">Contact</a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -143,7 +158,7 @@ const Cart = () => {
             {/* Help */}
             <div>
               <h3 className="text-gray-400 text-sm font-medium mb-3">Help</h3>
-              <ul className='space-y-2'>
+              <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-black hover:text-gray-700 transition">Payment Options</a>
                 </li>
@@ -160,8 +175,14 @@ const Cart = () => {
             <div>
               <h3 className="text-gray-500 text-sm font-medium mb-3">Newsletter</h3>
               <div className="flex items-center">
-                <input type="email" placeholder="Enter Your Email Address" className="flex-1 px-4 py-2 border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gray-400" />
-                <button className=" text-black underline  px-4 py-2 font-bold hover:bg-gray-300 transition">Subscribe</button>
+                <input
+                  type="email"
+                  placeholder="Enter Your Email Address"
+                  className="flex-1 px-4 py-2 border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gray-400"
+                />
+                <button className="text-black underline px-4 py-2 font-bold hover:bg-gray-300 transition">
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>

@@ -2,55 +2,59 @@
 
 import React from "react";
 import Image from "next/image";
-import { toppicks, Product } from "../ToppicksData";
 
-const TopPicks = () => {
+const Herone = () => {
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Heading Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">Top Picks For You</h2>
-          <p className="text-gray-600 mt-2">
-            Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
-          </p>
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {toppicks.map((product: Product) => (
-            <div key={product.id} className="flex flex-col items-center text-center space-y-4">
-              {/* Product Image */}
-              <div className="w-full max-w-xs relative">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
-              {/* Product Name */}
-              <h3 className="text-lg font-medium text-gray-800">{product.name}</h3>
-              {/* Product Price */}
-              <p className="text-lg font-semibold text-gray-600">{product.price}</p>
+    <section className="bg-[#F7F7F7] py-12">
+      <div className="container mx-auto px-4 md:px-12 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Table Section */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="w-full max-w-sm relative">
+              <Image
+                src="/table3.png"
+                alt="Side Table"
+                width={500}
+                height={500}
+                className="w-full h-auto object-contain"
+                priority
+              />
             </div>
-          ))}
-        </div>
+            <h3 className="font-bold text-xl">Side Table</h3>
+            <a
+              href="/shop"
+              className="text-black font-medium hover:no-underline hover:text-gray-800 transition"
+            >
+              View More
+            </a>
+            <div className="mt-4 w-24 mx-auto border-b-2 border-black"></div>
+          </div>
 
-        {/* View More Button */}
-        <div className="text-center mt-12">
-          <a
-            href="/shop"
-            className="inline-block text-black font-medium underline hover:no-underline hover:text-gray-800 transition"
-          >
-            View More
-          </a>
+          {/* Sofa Section */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="w-full max-w-sm relative">
+              <Image
+                src="/soffaa.png"
+                alt="Sofa"
+                width={500}
+                height={500}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+            <h3 className="font-bold text-xl">Sofa</h3>
+            <a
+              href="/shop"
+              className="text-black font-medium hover:no-underline hover:text-gray-800 transition"
+            >
+              View More
+            </a>
+            <div className="mt-4 w-24 mx-auto border-b-2 border-black"></div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default TopPicks;
+export default Herone;

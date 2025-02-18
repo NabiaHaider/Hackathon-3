@@ -1,53 +1,56 @@
-import React from 'react';
+"use client";
 
-const Herone = () => {
+import React from "react";
+import Image from "next/image";
+import { toppicks, Product } from "../ToppicksData";
+
+const TopPicks = () => {
   return (
-    <section className='bg-[#F7F7F7] py-12'>
-      <div className='container mx-auto px-4 md:px-12 mt-6'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {/* Table Section */}
-          <div className='flex flex-col items-center text-center space-y-4'>
-            <div className='w-full max-w-sm'>
-              <img
-                src='/table3.png'
-                alt='table-image'
-                className='w-full h-auto object-contain'
-              />
-            </div>
-            <h3 className='font-bold'>Side Table</h3>
-            <a
-              href='/shop'
-              className='text-black font-medium  hover:no-underline hover:text-gray-800 transition'
-            >
-              View More
-            </a>
-            {/* Add gap and underline below View More */}
-            <div className='mt-4 w-24 mx-auto border-b-2 border-black'></div>
-          </div>
+    <section className="py-12 bg-white">
+      <div className="container mx-auto px-4">
+        {/* Heading Section */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800">Top Picks For You</h2>
+          <p className="text-gray-600 mt-2">
+            Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
+          </p>
+        </div>
 
-          {/* Sofa Section */}
-          <div className='flex flex-col items-center text-center space-y-4'>
-            <div className='w-full max-w-sm'>
-              <img
-                src='/soffaa.png'
-                alt='sofa-image'
-                className='w-full h-auto object-contain'
-              />
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {toppicks.map((product: Product) => (
+            <div key={product.id} className="flex flex-col items-center text-center space-y-4">
+              {/* Product Image */}
+              <div className="w-full max-w-xs relative">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={300}
+                  height={300}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+              </div>
+              {/* Product Name */}
+              <h3 className="text-lg font-medium text-gray-800">{product.name}</h3>
+              {/* Product Price */}
+              <p className="text-lg font-semibold text-gray-600">{product.price}</p>
             </div>
-            <h3 className='font-bold'>Side Table</h3>
-            <a
-              href='/shop'
-              className='text-black font-medium  hover:no-underline hover:text-gray-800 transition'
-            >
-              View More
-            </a>
-            {/* Add gap and underline below View More */}
-            <div className='mt-4 w-24 mx-auto border-b-2 border-black'></div>
-          </div>
+          ))}
+        </div>
+
+        {/* View More Button */}
+        <div className="text-center mt-12">
+          <a
+            href="/shop"
+            className="inline-block text-black font-medium underline hover:no-underline hover:text-gray-800 transition"
+          >
+            View More
+          </a>
         </div>
       </div>
     </section>
   );
 };
 
-export default Herone;
+export default TopPicks;

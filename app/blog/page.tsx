@@ -42,9 +42,11 @@ const Blogpage = () => {
           {/* Blog Post */}
           <div className="mb-10">
             <div className="relative w-full h-64  mb-4 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="/belog1.jpg"
                 alt="Blog Post"
+                width={600} // Set appropriate width
+                height={300} // Set appropriate height
                 className="object-cover w-full h-[300px]"
               />
             </div>
@@ -77,9 +79,11 @@ const Blogpage = () => {
 
           <div className="mb-10">
             <div className="relative w-full h-64  mb-4 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="/belog2.jpg"
                 alt="Blog Post"
+                width={600} // Set appropriate width
+                height={300} // Set appropriate height
                 className="object-cover w-full h-[300px]"
               />
             </div>
@@ -112,9 +116,11 @@ const Blogpage = () => {
 
           <div className="mb-10">
             <div className="relative w-full h-64  mb-4 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="/2.jpeg"
                 alt="Blog Post"
+                width={600} // Set appropriate width
+                height={300} // Set appropriate height
                 className="object-cover w-full h-[300px]"
               />
             </div>
@@ -195,10 +201,12 @@ const Blogpage = () => {
             <h2 className="text-2xl font-semibold  mt-36">Recent Posts</h2>
             <ul className="space-y-4 mt-10">
               <li className="flex items-center">
-                <img
+                <Image
                   src="/b1.png"
                   alt="Thumbnail"
-                  className="w-16 h-16 object-cover rounded-lg mr-4"
+                  width={64} // Equivalent to w-16
+                  height={64} // Equivalent to h-16
+                  className="object-cover rounded-lg mr-4"
                 />
                 <div>
                   <Link href="#" className="text-lg font-medium hover:text-yellow-500">
@@ -211,10 +219,12 @@ const Blogpage = () => {
 
             <ul className="space-y-4 mt-5">
               <li className="flex items-center">
-                <img
+                <Image
                   src="/b2.png"
                   alt="Thumbnail"
-                  className="w-16 h-16 object-cover rounded-lg mr-4"
+                  width={64} // Equivalent to w-16
+                  height={64} // Equivalent to h-16
+                  className="object-cover rounded-lg mr-4"
                 />
                 <div>
                   <Link href="#" className="text-lg font-medium hover:text-yellow-500">
@@ -227,10 +237,12 @@ const Blogpage = () => {
 
             <ul className="space-y-4 mt-4">
               <li className="flex items-center">
-                <img
+                <Image
                   src="/b3.png"
                   alt="Thumbnail"
-                  className="w-16 h-16 object-cover rounded-lg mr-4"
+                  width={64} // Equivalent to w-16
+                  height={64} // Equivalent to h-16
+                  className="object-cover rounded-lg mr-4"
                 />
                 <div>
                   <Link href="#" className="text-lg font-medium hover:text-yellow-500">
@@ -243,10 +255,12 @@ const Blogpage = () => {
 
             <ul className="space-y-4 mt-4">
               <li className="flex items-center">
-                <img
+                <Image
                   src="/b4.png"
                   alt="Thumbnail"
-                  className="w-16 h-16 object-cover rounded-lg mr-4"
+                  width={64} // Equivalent to w-16
+                  height={64} // Equivalent to h-16
+                  className="object-cover rounded-lg mr-4"
                 />
                 <div>
                   <Link href="#" className="text-lg font-medium hover:text-yellow-500">
@@ -260,128 +274,125 @@ const Blogpage = () => {
         </div>
       </section>
 
-       {/* Pagination Section */}
- <section className="py-10 text-center">
-  <div className="flex justify-center gap-4">
-    <Link href={`/shop?page=1`}>
-       <div className="w-10 h-10 flex items-center justify-center border-yellow-200 rounded-md bg-yellow-200 hover:bg-yellow-300 hover:text-black">
-         1
-       </div>
-     </Link>
-     <Link href={`/shop?page=2`}>
-      <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
-         2
-       </div>
-    </Link>
-     <Link href={`/shop?page=3`}>
-       <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
-         3
-       </div>
-     </Link>
-     <Link href={`/shop?page=next`}>
-       <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
-         Next
-     </div>
-     </Link>
-   </div>
- </section>
+      {/* Pagination Section */}
+      <section className="py-10 text-center">
+        <div className="flex justify-center gap-4">
+          <Link href={`/shop?page=1`}>
+            <div className="w-10 h-10 flex items-center justify-center border-yellow-200 rounded-md bg-yellow-200 hover:bg-yellow-300 hover:text-black">
+              1
+            </div>
+          </Link>
+          <Link href={`/shop?page=2`}>
+            <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
+              2
+            </div>
+          </Link>
+          <Link href={`/shop?page=3`}>
+            <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
+              3
+            </div>
+          </Link>
+          <Link href={`/shop?page=next`}>
+            <div className="w-10 h-10 flex items-center justify-center border-yellow-100 rounded-md bg-yellow-100 hover:bg-yellow-200 hover:text-black">
+              Next
+            </div>
+          </Link>
+        </div>
+      </section>
 
- <section className="bg-pink-50 text-black py-10">
-   <div className="container mx-auto px-4">
-     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-       {/* First Column */}
-      <div className="flex flex-col items-center text-center">
-         <h2 className="text-black font-bold text-3xl">Free Delivery</h2>
-        <p className="text-xl text-gray-500 flex-grow mt-2">
-           For all orders over $50, consectetur <span className='pr-72'>adipim scing elit.</span>
-        </p>
-       </div>
+      <section className="bg-pink-50 text-black py-10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* First Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Free Delivery</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                For all orders over $50, consectetur <span className='pr-72'>adipim scing elit.</span>
+              </p>
+            </div>
 
-       {/* Second Column */}
-       <div className="flex flex-col items-center text-center">
-         <h2 className="text-black font-bold text-3xl">90 Days Return</h2>
-         <p className="text-xl text-gray-500 flex-grow mt-2">
-           If the product has an issue, consectetur  <span className='pr-48'>adipim scing elit.</span>
-         </p>
-       </div>
+            {/* Second Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">90 Days Return</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                If the product has an issue, consectetur  <span className='pr-48'>adipim scing elit.</span>
+              </p>
+            </div>
 
-       {/* Third Column */}
-       <div className="flex flex-col items-center text-center">
-         <h2 className="text-black font-bold text-3xl">Secure Payments</h2>
-         <p className="text-xl text-gray-500 flex-grow my-2">
-           100% secure payments, consectetur <span className='pr-72'>adipim scing elit.</span>
-         </p>
-       </div>
-     </div>
-   </div>
- </section>
- <footer className="bg-white py-8 border-t border-gray-200">
-   <div className="container mx-auto px-4 md:px-12">
-     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-       {/* Address */}
-       <div className="text-gray-600 text-sm">
-         <p>Jouhar</p>
-         <p className='my-4'>pakistan</p>
-       </div>
+            {/* Third Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Secure Payments</h2>
+              <p className="text-xl text-gray-500 flex-grow my-2">
+                100% secure payments, consectetur <span className='pr-72'>adipim scing elit.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer className="bg-white py-8 border-t border-gray-200">
+        <div className="container mx-auto px-4 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Address */}
+            <div className="text-gray-600 text-sm">
+              <p>Jouhar</p>
+              <p className='my-4'>pakistan</p>
+            </div>
 
-      {/* Links */}
-       <div>
-         <h3 className="text-gray-400 text-sm font-medium mb-3">Links</h3>
-         <ul className="space-y-2">
-           <li>
-             <a href="#" className="text-black hover:text-gray-700 transition">Home</a>
-           </li>
-           <li>
-             <a href="/shop" className="text-black hover:text-gray-700 transition">Shop</a>
-           </li>
-           <li>
-             <a href="#" className="text-black hover:text-gray-700 transition">About</a>
-           </li>
-           <li>
-             <a href="/contact" className="text-black hover:text-gray-700 transition">Contact</a>
-           </li>
-         </ul>
-       </div>
+            {/* Links */}
+            <div>
+              <h3 className="text-gray-400 text-sm font-medium mb-3">Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-black hover:text-gray-700 transition">Home</a>
+                </li>
+                <li>
+                  <a href="/shop" className="text-black hover:text-gray-700 transition">Shop</a>
+                </li>
+                <li>
+                  <a href="#" className="text-black hover:text-gray-700 transition">About</a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-black hover:text-gray-700 transition">Contact</a>
+                </li>
+              </ul>
+            </div>
 
-       {/* Help */}
-       <div>
-        <h3 className="text-gray-400 text-sm font-medium mb-3">Help</h3>
-         <ul className="space-y-2">
-           <li>
-             <a href="#" className="text-black hover:text-gray-700 transition">Payment Options</a>
-         </li>
-          <li>
-             <a href="#" className="text-black hover:text-gray-700 transition">Return</a>
-          </li>
-           <li>
-             <a href="#" className="text-black hover:text-gray-700 transition">Privacy Policies</a>
-           </li>
-         </ul>
-       </div>
+            {/* Help */}
+            <div>
+              <h3 className="text-gray-400 text-sm font-medium mb-3">Help</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-black hover:text-gray-700 transition">Payment Options</a>
+                </li>
+                <li>
+                  <a href="#" className="text-black hover:text-gray-700 transition">Return</a>
+                </li>
+                <li>
+                  <a href="#" className="text-black hover:text-gray-700 transition">Privacy Policies</a>
+                </li>
+              </ul>
+            </div>
 
-       {/* Newsletter */}
-       <div>
-         <h3 className="text-gray-500 text-sm font-medium mb-3">Newsletter</h3>
-         <div className="flex items-center">
-           <input type="email" placeholder="Enter Your Email Address" className="flex-1 px-4 py-2 border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gray-400" />
-           <button className=" text-black underline  px-4 py-2 font-bold hover:bg-gray-300 transition">Subscribe</button>
-         </div>
-       </div>
-     </div>
+            {/* Newsletter */}
+            <div>
+              <h3 className="text-gray-500 text-sm font-medium mb-3">Newsletter</h3>
+              <div className="flex items-center">
+                <input type="email" placeholder="Enter Your Email Address" className="flex-1 px-4 py-2 border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gray-400" />
+                <button className=" text-black underline  px-4 py-2 font-bold hover:bg-gray-300 transition">Subscribe</button>
+              </div>
+            </div>
+          </div>
 
-     {/* Bottom Section */}
-     <div className="mt-8 text-center text-gray-600 text-sm">
-       <hr />
-     </div>
-     <p className="pt-4">2022 Meubel House. All rights reserved.</p>
-   </div>
- </footer>
+          {/* Bottom Section */}
+          <div className="mt-8 text-center text-gray-600 text-sm">
+            <hr />
+          </div>
+          <p className="pt-4">2022 Meubel House. All rights reserved.</p>
+        </div>
+      </footer>
 
     </div>
   );
 };
 
 export default Blogpage;
-
-
-

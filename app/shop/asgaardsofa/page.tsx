@@ -168,7 +168,7 @@ const AsgaardSofa = () => {
     <div className="grid grid-cols-2 gap-4">
       <div className="p-4">
          <p className="text-gray-600">
-        Embodying the row, wayward spirit of rock n' roll the Kilburn portable active stereo speaker takes the unmistakable look sound of Marshall unplugs the chords, and takes the show on the road.
+        Embodying the row, wayward spirit of rock n roll the Kilburn portable active stereo speaker takes the unmistakable look sound of Marshall unplugs the chords, and takes the show on the road.
 
         </p>
       </div>

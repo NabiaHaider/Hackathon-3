@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useEffect, useState } from "react";
@@ -14,6 +15,7 @@ interface Product {
 const CheckOut = () => {
   const [cart, setCart] = useState<Product[]>([]);
   const [total, setTotal] = useState<number>(0);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -52,11 +54,13 @@ const CheckOut = () => {
     };
 
     console.log("Order Placed:", orderData);
-    alert("Your order has been placed successfully!");
+    setShowSuccess(true);
 
     localStorage.removeItem("cart");
     setCart([]);
     setTotal(0);
+
+    setTimeout(() => setShowSuccess(false), 5000);
   };
 
   return (
@@ -101,16 +105,16 @@ const CheckOut = () => {
               cart.map((item) => (
                 <div key={item.id} className="flex justify-between items-center mb-4">
                   <span className="text-2xl">{item.name} x {item.quantity}</span>
-                  <span className="text-2xl">Rs. {(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="text-2xl">Rs. {(item.price * item.quantity).toFixed(2)}</span><br></br>
                 </div>
               ))
             ) : (
               <p>Your cart is empty.</p>
-            )}
+            )}<br></br>
             <div className="flex justify-between items-center mb-4 text-2xl font-semibold">
               <span>Subtotal</span>
               <span>Rs. {total.toFixed(2)}</span>
-            </div>
+            </div><br></br>
             <div className="flex justify-between items-center text-2xl font-bold">
               <span>Total</span>
               <span className="text-yellow-600 text-3xl">Rs. {total.toFixed(2)}</span>
@@ -121,6 +125,15 @@ const CheckOut = () => {
           </div>
         </div>
       </section>
+
+      {showSuccess && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-10 rounded-lg shadow-lg text-center">
+            <h2 className="text-3xl font-bold text-green-600 mb-4">Order Placed Successfully!</h2>
+            <p className="text-xl">Thank you for your purchase. Your order is being processed.</p>
+          </div>
+        </div>
+      )}
 
       <footer className="bg-white py-8 border-t border-gray-200 text-center">
         <p>© 2025 Meubel House. All rights reserved.</p>

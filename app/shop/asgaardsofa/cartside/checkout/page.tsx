@@ -51,9 +51,10 @@ const CheckOut = () => {
     setTimeout(() => setOrderPlaced(false), 3000); // Hide message after 3 seconds
   };
 
-  useEffect(() => {
+   useEffect(() => {
     setIsFormValid(validateForm());
-  }, [formData]);
+  }, [validateForm]);
+
 
   return (
     <div>

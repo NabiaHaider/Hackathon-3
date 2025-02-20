@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import Product from '@/app/shop/page';
-
-interface Product {
-  name: string;
-  category: string;
-  price: number;
-}
+import { Product } from '@/types'; // ✅ Ensure correct import
 
 interface SearchAndFilterProps {
   products: Product[];
@@ -17,31 +11,31 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({ products, onFilter })
   const [selectedCategory, setSelectedCategory] = useState('');
   const [priceRange, setPriceRange] = useState<[number, number] | null>(null);
 
-  const categories = Array.from(new Set(products.map(product => product.category)));
+  const categories = Array.from(new Set(products.map((product) => product.category)));
 
   const handleFilter = () => {
-    let filteredProducts = products;
+    let filteredProducts = [...products]; // ✅ Create a new filtered list
 
     // Filter by search query
-    if (searchQuery) {
-      filteredProducts = filteredProducts.filter(product =>
+    if (searchQuery.trim()) {
+      filteredProducts = filteredProducts.filter((product) =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
     // Filter by category
     if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
+      filteredProducts = filteredProducts.filter((product) => product.category === selectedCategory);
     }
 
     // Filter by price range
     if (priceRange) {
       filteredProducts = filteredProducts.filter(
-        product => product.price >= priceRange[0] && product.price <= priceRange[1]
+        (product) => product.price >= priceRange[0] && product.price <= priceRange[1]
       );
     }
 
-    onFilter(filteredProducts);
+    onFilter(filteredProducts); // ✅ Ensure this function is correctly passed from the parent
   };
 
   return (
@@ -52,18 +46,18 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({ products, onFilter })
           type="text"
           placeholder="Search products..."
           value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="p-2 border rounded-md flex-1"
         />
 
         {/* Category Filter */}
         <select
           value={selectedCategory}
-          onChange={e => setSelectedCategory(e.target.value)}
+          onChange={(e) => setSelectedCategory(e.target.value)}
           className="p-2 border rounded-md"
         >
           <option value="">All Categories</option>
-          {categories.map(category => (
+          {categories.map((category) => (
             <option key={category} value={category}>
               {category}
             </option>
@@ -72,7 +66,7 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({ products, onFilter })
 
         {/* Price Range Filter */}
         <select
-          onChange={e => {
+          onChange={(e) => {
             const [min, max] = e.target.value.split('-').map(Number);
             setPriceRange(min !== undefined && max !== undefined ? [min, max] : null);
           }}

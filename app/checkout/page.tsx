@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 interface Product {
   id: number;
@@ -134,10 +135,37 @@ const CheckOut = () => {
           </div>
         </div>
       )}
+       <section className="bg-pink-50 text-black py-10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* First Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Free Delivery</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                For all orders over $50, consectetur <br></br> <span className='text-center'>adipim scing elit.</span>
+              </p>
+            </div>
 
-      <footer className="bg-white py-8 border-t border-gray-200 text-center">
-        <p>© 2025 Meubel House. All rights reserved.</p>
-      </footer>
+            {/* Second Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">90 Days Return</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                If the product has an issue, consectetur <br></br> <span className='text-ce'>adipim scing elit.</span>
+              </p>
+            </div>
+
+            {/* Third Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Secure Payments</h2>
+              <p className="text-xl text-gray-500 flex-grow my-2">
+                100% secure payments, consectetur <br></br> <span className='text-center'>adipim scing elit.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <Footer />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import ShoppingCart from '../components/Card';
 import { Product } from '@/types';
 import ShopLine from '../components/shop';
 import ProductDetail from '../product/[id]/ProductDetail';
-import Footer from '../components/Footer';
+import Footer from '@/app/components/Footer';
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import Footer from '../components/Footer';
 
 
 const AsgaardSofa = () => {
@@ -238,72 +239,38 @@ const AsgaardSofa = () => {
           </div>
         </div>
       </section>
-
-
-
-      <footer className="bg-white py-8 border-t border-gray-200">
-            <div className="container mx-auto px-4 md:px-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Address */}
-                    <div className="text-gray-600 text-sm">
-                        <p>Jouhar</p>
-                        <p>pakistan</p>
-                    </div>
-
-                    {/* Links */}
-                    <div>
-                        <h3 className="text-gray-500 text-sm font-medium mb-3">Links</h3>
-                        <ul className="space-y-2">
-                            <li>
-                                <a href="#" className="text-gray-800 hover:text-gray-900 transition">Home</a>
-                            </li>
-                            <li>
-                                <a href="/shop" className="text-gray-800 hover:text-gray-900 transition">Shop</a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-800 hover:text-gray-900 transition">About</a>
-                            </li>
-                            <li>
-                                <a href="/contact" className="text-gray-800 hover:text-gray-900 transition">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Help */}
-                    <div>
-                        <h3 className="text-gray-500 text-sm font-medium mb-3">Help</h3>
-                        <ul className='space-y-2'>
-                            <li>
-                                <a href="#" className="text-gray-800 hover:text-gray-900 transition">Payment Options</a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-800 hover:text-gray-900 transition">Return</a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-800 hover:text-gray-900 transition">Privacy Policies</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Newsletter */}
-                    <div>
-                        <h3 className="text-gray-500 text-sm font-medium mb-3">Newsletter</h3>
-                        <div className="flex items-center">
-                            <input type="email" placeholder="Enter Your Email Address" className="flex-1 px-4 py-2 border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-gray-400" />
-                            <button className=" text-black underline  px-4 py-2 font-bold hover:bg-gray-800 transition">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom Section */}
-                <div className="mt-8 text-center text-gray-600 text-sm">
-                    <hr />
-                </div>
-                <p className="pt-4">2022 Meubel House. All rights reserved.</p>
+       </section>
+      <section className="bg-pink-50 text-black py-10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* First Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Free Delivery</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                For all orders over $50, consectetur <br></br> <span className='text-center'>adipim scing elit.</span>
+              </p>
             </div>
-        </footer>
 
+            {/* Second Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">90 Days Return</h2>
+              <p className="text-xl text-gray-500 flex-grow mt-2">
+                If the product has an issue, consectetur <br></br> <span className='text-ce'>adipim scing elit.</span>
+              </p>
+            </div>
 
+            {/* Third Column */}
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-black font-bold text-3xl">Secure Payments</h2>
+              <p className="text-xl text-gray-500 flex-grow my-2">
+                100% secure payments, consectetur <br></br> <span className='text-center'>adipim scing elit.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+<Footer />
     </div>
   );
 };

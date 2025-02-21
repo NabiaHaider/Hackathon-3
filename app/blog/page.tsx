@@ -5,7 +5,7 @@ import { GiWoodenSign } from "react-icons/gi";
 import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";  // Ensure you're importing Link
 import Image from "next/image";
-import Footer from '../components/Footer';
+import Footer from '@/app/components/Footer';
 
 const Blogpage = () => {
   return (

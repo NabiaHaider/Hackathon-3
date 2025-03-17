@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaCartPlus, FaHeart } from 'react-icons/fa';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useCart } from '@/context/CartContext';
 import { urlFor } from '@/sanity/lib/image';
 
